@@ -40,28 +40,43 @@ class PersonalManager:
         return parser
     
     def execute_shell_command(self, cmd: List[str]) -> int:
-        """Execute shell command and display output"""
+        """Execute shell command using fish and display output with terminal colors"""
         try:
+            # Check if fish is available
+            fish_check = subprocess.run(["which", "fish"], capture_output=True, text=True)
+            shell_cmd = "fish" if fish_check.returncode == 0 else "bash"
+            
+            # Execute command with fish to preserve colors
+            full_cmd = [shell_cmd, "-c", " ".join(cmd)]
+            
             result = subprocess.run(
-                cmd,
+                full_cmd,
                 check=True,
-                text=True,
+                text=False,  # Keep binary to preserve ANSI color codes
                 capture_output=True
             )
             
+            # Print stdout with colors preserved
             if result.stdout:
-                print(result.stdout, end="")
+                sys.stdout.buffer.write(result.stdout)
+                sys.stdout.flush()
             
+            # Print stderr with colors preserved
             if result.stderr:
-                print(result.stderr, end="", file=sys.stderr)
+                sys.stderr.buffer.write(result.stderr)
+                sys.stderr.flush()
             
             return result.returncode
             
         except subprocess.CalledProcessError as e:
+            # Print stdout with colors preserved
             if e.stdout:
-                print(e.stdout, end="")
+                sys.stdout.buffer.write(e.stdout)
+                sys.stdout.flush()
+            # Print stderr with colors preserved
             if e.stderr:
-                print(e.stderr, end="", file=sys.stderr)
+                sys.stderr.buffer.write(e.stderr)
+                sys.stderr.flush()
             return e.returncode
         except FileNotFoundError:
             print(f"Command not found: {cmd[0]}", file=sys.stderr)
