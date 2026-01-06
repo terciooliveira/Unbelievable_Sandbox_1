@@ -1,0 +1,62 @@
+Metadata-Version: 2.4
+Name: personal-manager
+Version: 0.1.0
+Summary: CLI task and project organizer with shell integration
+Author-email: User <user@example.com>
+License: MIT
+Project-URL: Homepage, https://github.com/user/personal-manager
+Project-URL: Repository, https://github.com/user/personal-manager
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# Personal Manager
+
+CLI task and project organizer with shell integration.
+
+## Features
+
+- Shell command execution interface
+- Task management (taskwarrior integration planned)
+- Time tracking (timewarrior integration planned)
+- Simple terminal-based UI
+
+## Installation
+
+```bash
+pip install -e .
+```
+
+## Usage
+
+```bash
+# Execute shell commands
+pm shell ls -la
+pm shell "git status"
+
+# Task management (placeholder)
+pm task list
+
+# Time tracking (placeholder)  
+pm time summary
+```
+
+## Development
+
+Run tests:
+```bash
+python -m pytest tests/
+```
+
+## Requirements
+
+- Python 3.8+
+- Optional: taskwarrior, timewarrior for full functionality

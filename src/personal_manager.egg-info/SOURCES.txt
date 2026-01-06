@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+src/personal_manager/__init__.py
+src/personal_manager/cli.py
+src/personal_manager.egg-info/PKG-INFO
+src/personal_manager.egg-info/SOURCES.txt
+src/personal_manager.egg-info/dependency_links.txt
+src/personal_manager.egg-info/entry_points.txt
+src/personal_manager.egg-info/top_level.txt

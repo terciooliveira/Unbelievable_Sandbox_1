@@ -1,0 +1,2 @@
+[console_scripts]
+pm = personal_manager.cli:main
