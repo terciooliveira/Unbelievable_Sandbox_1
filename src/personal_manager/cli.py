@@ -118,8 +118,14 @@ class PersonalManager:
 
 def main():
     """Main entry point for the CLI"""
-    pm = PersonalManager()
-    sys.exit(pm.run())
+    try:
+        from .tui import main as tui_main
+        tui_main()
+    except ImportError as e:
+        print(f"Error importing TUI: {e}")
+        print("Falling back to CLI mode...")
+        pm = PersonalManager()
+        sys.exit(pm.run())
 
 
 if __name__ == "__main__":

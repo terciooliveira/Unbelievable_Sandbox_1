@@ -1,0 +1,56 @@
+/* Personal Manager TUI Styles */
+
+Screen {
+    layout: grid;
+    grid-size: 2 1;
+}
+
+.title {
+    text-style: bold;
+    color: $accent;
+    margin: 1 0;
+}
+
+#menu-container {
+    width: 25%;
+    height: 100%;
+    background: $surface;
+    border-right: solid $primary;
+    padding: 1;
+}
+
+#main-container {
+    width: 75%;
+    height: 100%;
+    padding: 1;
+}
+
+#shell-container {
+    margin-bottom: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+.output {
+    height: 70%;
+    background: $panel;
+    border: solid $accent;
+    padding: 1;
+    overflow-y: auto;
+}
+
+Button {
+    margin: 0 0 1 0;
+    width: 100%;
+}
+
+#shell-input {
+    margin: 0 0 1 0;
+}
+
+#execute-btn {
+    width: auto;
+    margin: 0;
+}
