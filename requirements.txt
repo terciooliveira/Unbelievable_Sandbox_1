@@ -1,0 +1,8 @@
+# Personal Manager - Requirements
+# No external dependencies required for basic functionality
+# Uses only Python standard library
+
+# Optional dependencies for enhanced features (uncomment if needed)
+# colorama>=0.4.4  # For colored terminal output
+# rich>=12.0.0     # For enhanced terminal UI
+# click>=8.0.0     # Alternative CLI framework
